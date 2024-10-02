@@ -37,6 +37,7 @@
                     "id": 5,
                     "tipo": "pato",
                     "nombre": "Rosita",
+                    "apellido": "Pato",
                     "edad": 7,
                     "genero": "Femenino",
                     "imagen": "rosita.png"
@@ -44,6 +45,7 @@
                     "id": 6,
                     "tipo": "pato",
                     "nombre": "Mayo",
+                    "apellido": "Pato",
                     "edad": 7,
                     "genero": "Femenino",
                     "imagen": "mayo.png"
@@ -51,6 +53,7 @@
                     "id": 7,
                     "tipo": "pato",
                     "nombre": "Junio",
+                    "apellido": "Pato",
                     "edad": 7,
                     "genero": "Femenino",
                     "imagen": "junio.png"
@@ -138,6 +141,7 @@
                         "id": 16,
                         "tipo": "pato",
                         "nombre": "Daisy",
+                        "apellido": "Pato",
                         "edad": 24,
                         "genero": "Femenino",
                         "imagen": "daisy.png"

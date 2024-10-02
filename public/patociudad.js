@@ -21,10 +21,11 @@ class Pato {
 
   // Método que genera la representación en HTML de cada pato
   generarHTML(relacion = "") {
-    return `
+    if (this.genero == "Masculino") {
+      return `
       <div class="pato">
           <img src="/img/${this.imagen}" alt="${this.nombre
-      }" loading="lazy" class="pato-img">
+        }" loading="lazy" class="pato-img masculino">
           <div class="pato-info">
               <h3>${this.nombre} ${this.apellido} ${relacion ? `<br>(${relacion})` : ""} </h3>
               <p>Edad: ${this.edad}</p>
@@ -32,6 +33,21 @@ class Pato {
           </div>
       </div>
     `;
+      
+    } else {
+      return `
+      <div class="pato">
+          <img src="/img/${this.imagen}" alt="${this.nombre
+        }" loading="lazy" class="pato-img femenino">
+          <div class="pato-info">
+              <h3>${this.nombre} ${this.apellido} ${relacion ? `<br>(${relacion})` : ""} </h3>
+              <p>Edad: ${this.edad}</p>
+              <p>Género: ${this.genero}</p>
+          </div>
+      </div>
+    `;
+    }
+
   }
 }
 

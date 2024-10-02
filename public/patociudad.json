@@ -94,7 +94,7 @@
                     "hijos": [
                         {
                             "id": 12,
-                            "tipo": "pato",
+                            "tipo": "famoso",
                             "nombre": "Pato",
                             "apellido": "Pato",
                             "edad": 10,
@@ -104,7 +104,7 @@
                         },
                         {
                             "id": 13,
-                            "tipo": "pato",
+                            "tipo": "famoso",
                             "nombre": "Jorgito",
                             "apellido": "Pato",
                             "edad": 10,
@@ -114,7 +114,7 @@
                         },
                         {
                             "id": 14,
-                            "tipo": "pato",
+                            "tipo": "famoso",
                             "nombre": "Jaimito",
                             "apellido": "Pato",
                             "edad": 10,

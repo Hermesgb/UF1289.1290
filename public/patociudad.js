@@ -33,9 +33,9 @@ class Pato {
           </div>
       </div>
     `;
-      
-    } 
-    else if(this.genero == "Femenino") {
+
+    }
+    else if (this.genero == "Femenino") {
       return `
       <div class="pato">
           <img src="/img/${this.imagen}" alt="${this.nombre
@@ -47,8 +47,8 @@ class Pato {
           </div>
       </div>
     `;
-      
-    }else {
+
+    } else {
       return `
       <div class="pato">
           <img src="/img/${this.imagen}" alt="${this.nombre
@@ -65,11 +65,12 @@ class Pato {
   }
 }
 
-class Pato_famoso extends Pato {
+class PatoFamoso extends Pato {
   constructor(tipo, nombre, apellido, edad, genero, imagen) {
     super(tipo, nombre, apellido, edad, genero, imagen);
   }
   generarFama() {
+    this.generarHTML()
 
   }
 }
@@ -122,44 +123,49 @@ class PatoCiudad {
       const { id, tipo, nombre, apellido, edad, genero, imagen, hijos, pareja, fama } =
         datos;
 
-      const pato =
-        tipo == "pato" || "famoso"
-          ? new Pato(tipo, nombre, apellido, edad, genero, imagen)
-          : new Pato();
-
-
-      // Si tiene una pareja, la agregamos
-      if (pareja) {
-        const parejaObjeto = new Pato(
-          pareja.tipo,
-          pareja.nombre,
-          pareja.apellido,
-          pareja.edad,
-          pareja.genero,
-          pareja.imagen
-        );
-        pato.agregarPareja(parejaObjeto);
+      function siFamoso() {
+        if (tipo == "famoso") { 
+          return new PatoFamoso(tipo, nombre, apellido, edad, genero, imagen)
+        }else{
+          return new Pato(tipo, nombre, apellido, edad, genero, imagen)
+        }
       }
+      
+      const pato = siFamoso()
 
-      if (hijos && hijos.length > 0) {
-        hijos.forEach((hijo) => {
-          const hijoObjeto = crearArbolDesdeJson(hijo); // Recursivamente crea hijos
-          pato.agregarHijo(hijoObjeto);
-        });
-      }
 
-      return pato;
+  // Si tiene una pareja, la agregamos
+  if(pareja) {
+    const parejaObjeto = new Pato(
+      pareja.tipo,
+      pareja.nombre,
+      pareja.apellido,
+      pareja.edad,
+      pareja.genero,
+      pareja.imagen
+    );
+    pato.agregarPareja(parejaObjeto);
+  }
+
+  if(hijos && hijos.length > 0) {
+  hijos.forEach((hijo) => {
+    const hijoObjeto = crearArbolDesdeJson(hijo); // Recursivamente crea hijos
+    pato.agregarHijo(hijoObjeto);
+  });
+}
+
+return pato;
     }
 
-    fetch(fichero)
-      .then((response) => response.json())
-      .then((data) => {
-        this.familiaPato = new Familia();
-        this.familiaPato.setRaiz(crearArbolDesdeJson(data));
-        document.getElementById("arbol-genealogico").innerHTML =
-          this.familiaPato.generarArbolHTML();
-      })
-      .catch((error) => console.error("Error al cargar el JSON:", error));
+fetch(fichero)
+  .then((response) => response.json())
+  .then((data) => {
+    this.familiaPato = new Familia();
+    this.familiaPato.setRaiz(crearArbolDesdeJson(data));
+    document.getElementById("arbol-genealogico").innerHTML =
+      this.familiaPato.generarArbolHTML();
+  })
+  .catch((error) => console.error("Error al cargar el JSON:", error));
   }
 }
 

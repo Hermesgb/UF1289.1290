@@ -1,0 +1,115 @@
+body {
+    font-family: Arial, sans-serif;
+}
+.familia {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.pato {
+    margin: 20px;
+    text-align: center;
+}
+
+.arbol-nodo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 10px;
+    border: none;
+}
+
+.arbol-contenedor {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.arbol-hijos {
+    display: flex;justify-content: center;
+    justify-content: space-between;
+    position: relative;
+    margin-top: 20px;
+}
+
+.pato {
+    text-align: center;
+    margin: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+
+.pato-img {
+    width: 127px;
+    height: 133px;
+    border-radius: 50%;
+    padding: 10px;
+    padding-bottom: 13px;
+    border: 2px solid #333;
+    background-color: #f8d61c;
+}
+
+.pato-img.femenino {
+    background-color: #3086a3;
+}
+
+.pato-img.masculino {
+    background-color: #cd368e;
+}
+
+.pato-info {
+    margin-top: 10px;
+}
+
+/* Línea vertical desde el padre */
+
+.arbol-nodo::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    width: 2px;
+    height: 20px;
+    background-color: #333;
+}
+
+/* Línea horizontal que conecta a los hijos */
+.arbol-hijos::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: calc(100% - 20px);
+    height: 2px;
+    background-color: #333;
+}
+
+/* Línea horizontal que conecta a las parejas */
+.arbol-contenedor::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: calc(100% - 20px);
+    height: 2px;
+    background-color: #333;
+}
+
+/* Línea vertical que baja desde cada hijo */
+.arbol-hijos .pato::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    width: 2px;
+    height: 20px;
+    background-color: #333;
+}

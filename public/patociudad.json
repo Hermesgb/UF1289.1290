@@ -1,0 +1,167 @@
+{
+    "id": 1,
+    "tipo": "pato",
+    "nombre": "Molly",
+    "apellido": "Mallard",
+    "edad": 105,
+    "genero": "Femenino",
+    "imagen": "molly.png",
+    "pareja": {
+        "id": 2,
+        "tipo": "pato",
+        "nombre": "'Dirty' Dingus",
+        "apellido": "McPato",
+        "edad": 114,
+        "genero": "Masculino",
+        "imagen": "dirty.png"
+    },
+    "hijos": [{
+        "id": 3,
+        "tipo": "pato",
+        "nombre": "Fergus",
+        "apellido": "McPato",
+        "edad": 89,
+        "genero": "Masculino",
+        "imagen": "fergus.png",
+        "hijos": [
+            {
+                "id": 4,
+                "tipo": "famoso",
+                "nombre": "Gilito",
+                "apellido": "McPato",
+                "edad": 70,
+                "genero": "Masculino",
+                "imagen": "gilito.png",
+                "fama": "Es el Pato mmás rico del mundo",
+                "hijos": [{
+                    "id": 5,
+                    "tipo": "pato",
+                    "nombre": "Rosita",
+                    "edad": 7,
+                    "genero": "Femenino",
+                    "imagen": "rosita.png"
+                },{
+                    "id": 6,
+                    "tipo": "pato",
+                    "nombre": "Mayo",
+                    "edad": 7,
+                    "genero": "Femenino",
+                    "imagen": "mayo.png"
+                },{
+                    "id": 7,
+                    "tipo": "pato",
+                    "nombre": "Junio",
+                    "edad": 7,
+                    "genero": "Femenino",
+                    "imagen": "junio.png"
+                }]
+            },
+            {
+                "id": 8,
+                "tipo": "pato",
+                "nombre": "Matilda",
+                "apellido": "McPato",
+                "edad": 62,
+                "genero": "Femenino",
+                "imagen": "matilda.png",
+                "pareja": {
+                    "id": 9,
+                    "tipo": "pato",
+                    "nombre": "Ludwig",
+                    "apellido": "Von Drake",
+                    "edad": 76,
+                    "genero": "Masculino",
+                    "imagen": "Ludwig.png"
+                }
+            },
+            {
+            "id": 10,
+            "tipo": "pato",
+            "nombre": "Hortensia",
+            "apellido": "McPato",
+            "edad": 55,
+            "genero": "Femenino",
+            "imagen": "hortensia.png",
+            "hijos": [
+                {
+                    "id": 11,
+                    "tipo": "pato",
+                    "nombre": "Della",
+                    "apellido": "Pato",
+                    "edad": 30,
+                    "genero": "Femenino",
+                    "imagen": "della.png",
+                    "hijos": [
+                        {
+                            "id": 12,
+                            "tipo": "pato",
+                            "nombre": "Pato",
+                            "apellido": "Pato",
+                            "edad": 10,
+                            "genero": "Masculino",
+                            "imagen": "juanito.png",
+                            "fama": "Vive aventuras con sus gemelos"
+                        },
+                        {
+                            "id": 13,
+                            "tipo": "pato",
+                            "nombre": "Jorgito",
+                            "apellido": "Pato",
+                            "edad": 10,
+                            "genero": "Masculino",
+                            "imagen": "jorgito.png",
+                            "fama": "Vive aventuras con sus gemelos"
+                        },
+                        {
+                            "id": 14,
+                            "tipo": "pato",
+                            "nombre": "Jaimito",
+                            "apellido": "Pato",
+                            "edad": 10,
+                            "genero": "Masculino",
+                            "imagen": "jaimito.png",
+                            "fama": "Vive aventuras con sus gemelos"
+                        }
+                    ]
+                },
+                {
+                    "id": 15,
+                    "tipo": "famoso",
+                    "nombre": "Pato",
+                    "apellido": "Donald",
+                    "edad": 25,
+                    "genero": "Masculino",
+                    "imagen": "donald.png",
+                    "hijos": [],
+                    "fama": "Famoso por su malhumor y travesuras",
+                    "pareja": {
+                        "id": 16,
+                        "tipo": "pato",
+                        "nombre": "Daisy",
+                        "edad": 24,
+                        "genero": "Femenino",
+                        "imagen": "daisy.png"
+                    }
+                }
+            ],
+            "pareja": {
+                "id": 17,
+                "tipo": "pato",
+                "nombre": "Quackmore",
+                "apellido": "Pato",
+                "edad": 58,
+                "genero": "Masculino",
+                "imagen": "quackmore.png"
+            }
+        }],
+        "pareja": {
+            "id": 18,
+            "tipo": "pato",
+            "nombre": "Downy",
+            "apellido": "O'Drake",
+            "edad": 87,
+            "genero": "Femenino",
+            "imagen": "downy.png"
+        }
+    }]
+}

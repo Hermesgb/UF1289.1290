@@ -34,11 +34,25 @@ class Pato {
       </div>
     `;
       
-    } else {
+    } 
+    else if(this.genero == "Femenino") {
       return `
       <div class="pato">
           <img src="/img/${this.imagen}" alt="${this.nombre
         }" loading="lazy" class="pato-img femenino">
+          <div class="pato-info">
+              <h3>${this.nombre} ${this.apellido} ${relacion ? `<br>(${relacion})` : ""} </h3>
+              <p>Edad: ${this.edad}</p>
+              <p>Género: ${this.genero}</p>
+          </div>
+      </div>
+    `;
+      
+    }else {
+      return `
+      <div class="pato">
+          <img src="/img/${this.imagen}" alt="${this.nombre
+        }" loading="lazy" class="pato-img">
           <div class="pato-info">
               <h3>${this.nombre} ${this.apellido} ${relacion ? `<br>(${relacion})` : ""} </h3>
               <p>Edad: ${this.edad}</p>

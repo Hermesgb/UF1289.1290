@@ -23,9 +23,8 @@ class Pato {
   generarHTML(relacion = "") {
     return `
       <div class="pato">
-          <img src="/img/${this.imagen}" alt="${
-      this.nombre
-    }" loading="lazy" class="pato-img">
+          <img src="/img/${this.imagen}" alt="${this.nombre
+      }" loading="lazy" class="pato-img">
           <div class="pato-info">
               <h3>${this.nombre} ${this.apellido} ${relacion ? `<br>(${relacion})` : ""} </h3>
               <p>Edad: ${this.edad}</p>
@@ -36,12 +35,12 @@ class Pato {
   }
 }
 
-class Pato_famoso extends Pato{
+class Pato_famoso extends Pato {
   constructor(tipo, nombre, apellido, edad, genero, imagen) {
     super(tipo, nombre, apellido, edad, genero, imagen);
   }
   generarFama() {
-    
+
   }
 }
 
@@ -94,9 +93,10 @@ class PatoCiudad {
         datos;
 
       const pato =
-        tipo == "pato"
+        tipo == "pato" || "famoso"
           ? new Pato(tipo, nombre, apellido, edad, genero, imagen)
           : new Pato();
+
 
       // Si tiene una pareja, la agregamos
       if (pareja) {

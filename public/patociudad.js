@@ -36,6 +36,15 @@ class Pato {
   }
 }
 
+class Pato_famoso extends Pato{
+  constructor(tipo, nombre, apellido, edad, genero, imagen) {
+    super(tipo, nombre, apellido, edad, genero, imagen);
+  }
+  generarFama() {
+    
+  }
+}
+
 // Clase Familia
 class Familia {
   constructor() {

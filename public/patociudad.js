@@ -21,48 +21,19 @@ class Pato {
 
   // Método que genera la representación en HTML de cada pato
   generarHTML(relacion = "") {
-    if (this.genero == "Masculino") {
-      return `
-      <div class="pato">
-          <img src="/img/${this.imagen}" alt="${this.nombre
-        }" loading="lazy" class="pato-img masculino">
-          <div class="pato-info">
-              <h3>${this.nombre} ${this.apellido} ${relacion ? `<br>(${relacion})` : ""} </h3>
-              <p>Edad: ${this.edad}</p>
-              <p>Género: ${this.genero}</p>
-          </div>
-      </div>
-    `;
-
-    }
-    else if (this.genero == "Femenino") {
-      return `
-      <div class="pato">
-          <img src="/img/${this.imagen}" alt="${this.nombre
-        }" loading="lazy" class="pato-img femenino">
-          <div class="pato-info">
-              <h3>${this.nombre} ${this.apellido} ${relacion ? `<br>(${relacion})` : ""} </h3>
-              <p>Edad: ${this.edad}</p>
-              <p>Género: ${this.genero}</p>
-          </div>
-      </div>
-    `;
-
-    } else {
-      return `
-      <div class="pato">
-          <img src="/img/${this.imagen}" alt="${this.nombre
-        }" loading="lazy" class="pato-img">
-          <div class="pato-info">
-              <h3>${this.nombre} ${this.apellido} ${relacion ? `<br>(${relacion})` : ""} </h3>
-              <p>Edad: ${this.edad}</p>
-              <p>Género: ${this.genero}</p>
-          </div>
-      </div>
-    `;
-    }
-
+    return `
+    <div class="pato">
+        <img src="/img/${this.imagen}" alt="${this.nombre
+      }" loading="lazy" class="pato-img ${this.genero.toLowerCase()}">
+        <div class="pato-info">
+            <h3>${this.nombre} ${this.apellido} ${relacion ? `<br>(${relacion})` : ""} </h3>
+            <p>Edad: ${this.edad}</p>
+            <p>Género: ${this.genero}</p>
+        </div>
+    </div>
+  `;
   }
+
 }
 
 class PatoFamoso extends Pato {
@@ -73,7 +44,7 @@ class PatoFamoso extends Pato {
     return `
       <div class="pato">
           <img src="/img/${this.imagen}" alt="${this.nombre
-        }" loading="lazy" class="pato-img masculino">
+      }" loading="lazy" class="pato-img masculino">
           <div class="pato-info">
               <h3>${this.nombre} ${this.apellido} ${relacion ? `<br>(${relacion})` : ""} </h3>
               <p>Edad: ${this.edad}</p>
@@ -134,48 +105,48 @@ class PatoCiudad {
         datos;
 
       function siFamoso() {
-        if (tipo == "famoso") { 
+        if (tipo == "famoso") {
           return new PatoFamoso(tipo, nombre, apellido, edad, genero, imagen)
-        }else{
+        } else {
           return new Pato(tipo, nombre, apellido, edad, genero, imagen)
         }
       }
-      
+
       const pato = siFamoso()
 
 
-  // Si tiene una pareja, la agregamos
-  if(pareja) {
-    const parejaObjeto = new Pato(
-      pareja.tipo,
-      pareja.nombre,
-      pareja.apellido,
-      pareja.edad,
-      pareja.genero,
-      pareja.imagen
-    );
-    pato.agregarPareja(parejaObjeto);
-  }
+      // Si tiene una pareja, la agregamos
+      if (pareja) {
+        const parejaObjeto = new Pato(
+          pareja.tipo,
+          pareja.nombre,
+          pareja.apellido,
+          pareja.edad,
+          pareja.genero,
+          pareja.imagen
+        );
+        pato.agregarPareja(parejaObjeto);
+      }
 
-  if(hijos && hijos.length > 0) {
-  hijos.forEach((hijo) => {
-    const hijoObjeto = crearArbolDesdeJson(hijo); // Recursivamente crea hijos
-    pato.agregarHijo(hijoObjeto);
-  });
-}
+      if (hijos && hijos.length > 0) {
+        hijos.forEach((hijo) => {
+          const hijoObjeto = crearArbolDesdeJson(hijo); // Recursivamente crea hijos
+          pato.agregarHijo(hijoObjeto);
+        });
+      }
 
-return pato;
+      return pato;
     }
 
-fetch(fichero)
-  .then((response) => response.json())
-  .then((data) => {
-    this.familiaPato = new Familia();
-    this.familiaPato.setRaiz(crearArbolDesdeJson(data));
-    document.getElementById("arbol-genealogico").innerHTML =
-      this.familiaPato.generarArbolHTML();
-  })
-  .catch((error) => console.error("Error al cargar el JSON:", error));
+    fetch(fichero)
+      .then((response) => response.json())
+      .then((data) => {
+        this.familiaPato = new Familia();
+        this.familiaPato.setRaiz(crearArbolDesdeJson(data));
+        document.getElementById("arbol-genealogico").innerHTML =
+          this.familiaPato.generarArbolHTML();
+      })
+      .catch((error) => console.error("Error al cargar el JSON:", error));
   }
 }
 

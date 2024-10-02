@@ -69,9 +69,19 @@ class PatoFamoso extends Pato {
   constructor(tipo, nombre, apellido, edad, genero, imagen) {
     super(tipo, nombre, apellido, edad, genero, imagen);
   }
-  generarFama() {
-    this.generarHTML()
-
+  generarHTML(relacion = "") {
+    return `
+      <div class="pato">
+          <img src="/img/${this.imagen}" alt="${this.nombre
+        }" loading="lazy" class="pato-img masculino">
+          <div class="pato-info">
+              <h3>${this.nombre} ${this.apellido} ${relacion ? `<br>(${relacion})` : ""} </h3>
+              <p>Edad: ${this.edad}</p>
+              <p>Género: ${this.genero}</p>
+              <p>Fama: ´Es ${this.tipo}´</p>
+          </div>
+      </div>
+    `;
   }
 }
 
